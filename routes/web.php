@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\ColaboradorController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
+
+Route::view('/login', 'welcome')->name('login.form');   // só mostra a tela
+
+Route::post('/login', [AuthController::class, 'auth'])->name('login.auth');
 
 Route::get('/', function () {
     return view('welcome');

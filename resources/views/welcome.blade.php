@@ -1,41 +1,32 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '_', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <div><form action="" method="GET" style="text-align: center; justify-content: center;">
-        <h1>Login</h1>
-        <label for="email">Digite seu email:</label>
-        <input type="text" id="email" placeholder="Digite seu email aqui" value="{{ old('email') }}" required><br>
+@extends('layouts.admin')
+    
+@section('content')
 
-        <label for="password">Digite sua senha:</label>
-        <input type="password" id="password" placeholder="Digite sua senha aqui" value="{{ old('password') }}" required><br>
+    <div class="card mb-4 border-light shadow" style="width: 20rem; //height: 22rem; ">
+        <div class="card-body">
 
-        <button type="submmit">Enviar</button>
+        <form class="row g-3" action="{{ route('login.auth') }}" method="POST" style="justify-content: center;">
+        @csrf
+        <h1 style="text-align: center">Login</h1>
+
+        <div class="col-md-12">
+            <label for="email" class="form-label">Digite seu email:</label>
+            <input type="text" name ="email" id="email" class="form-control" placeholder="Digite seu email aqui" value="{{ old('email') }}" required>
+        </div>
+
+        <div class="col-md-12">
+            <label for="password" class="form-label">Digite sua senha:</label>
+            <input type="password" name ="password" id="password" class="form-control" placeholder="Digite sua senha aqui" value="{{ old('password') }}" required>
+        </div>
+    
+        <button type="submit" class="btn btn-primary btn-sm mb-2">Enviar</button>
 
         </form>
+    
+    @if(session('erro'))
+        <p style="color:red">{{ session('erro') }}</p>
+    @endif
+        </div>
+    </div>
 
-        <?php
- 
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            $email = $_GET["email"]; 
-            $password = $_GET["password"];
-
-            if($email == "meu@email.com" && $password == "A123@"){
-                return redirect()->route('colaborador.create', $colaborador);
-
-            }
-
-            else{
-                return redirect('/')->with('erro', 'Email ou senha estão errados');
-            }
-            
-        }
-        ?>
-        <a href="{{ route('colaborador.create') }}">Cadastrar novo Colaborador</a>
-    </div>    
-</body>
-</html>
+@endsection

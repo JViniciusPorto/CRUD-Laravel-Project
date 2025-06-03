@@ -1,11 +1,12 @@
-# 📋 Projeto 3E — Sistema de Controle de Colaboradores - J Vinicius(DS-3)
+# 📋 CRUD em Laravel — Sistema de Controle de Colaboradores - J Vinicius
 
 ## ✅ Requisitos para rodar o projeto
 
 - **PHP** 8.2 ou superior  
 - **Composer** 2.5 ou superior  
 - **Qualquer sistema de BD** preferencialmente o MySQL 
-- **Laravel** 12  
+- **Laravel** 12
+- **Node** 22 ou superior
 
 - Servidor local como **XAMPP**, **WampServer**, **Laragon**, **Valet**, ou rodar via `php artisan serve`
 
