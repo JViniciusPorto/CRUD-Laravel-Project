@@ -1,4 +1,4 @@
-# 📋 CRUD em Laravel — Sistema de Controle de Colaboradores - J Vinicius
+# 📋 CRUD em Laravel / Sistema de Controle de Colaboradores - J Vinicius
 
 ## ✅ Requisitos para rodar o projeto
 
@@ -18,3 +18,5 @@
 - **4.** Gere a chave única do Laravel
 - **5.** Configure o banco de dados
 - **6.** Suba o servidor com o comando "php artisan serve", e teste a aplicação do projeto
+
+- **OBS:** Execute o comando "npm run dev" no terminal antes de testar aplicação
